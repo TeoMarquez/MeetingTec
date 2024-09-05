@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videollamada WebRTC</title>
+    <style>
+        body { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            margin: 20px;
+            color: #333;
+        }
+        #container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px;
+        }
+        #video-container {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 2;
+            margin-right: 20px;
+        }
+        video {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        #sidebar {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #sidebar button {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #sidebar button:hover {
+            background-color: #0056b3;
+        }
+        #chat-container {
+            flex: 1;
+            max-height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #fafafa;
+        }
+        #chat-input {
+            width: calc(100% - 80px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #chat-send-button {
+            width: 60px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        #chat-send-button:hover {
+            background-color: #0056b3;
+        }
+        #name {
+            width: calc(100% - 90px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .name-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .name-container input {
+            margin-right: 10px;
+        }
+        .change-name-button {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .change-name-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Videollamada WebRTC</h1>
+    <div id="container">
+        <div id="video-container">
+            <video id="localVideo" autoplay muted></video>
+        </div>
+        <div id="sidebar">
+            <div class="button-group">
+                <button id="toggleCamera">Apagar cámara</button>
+                <button id="toggleMic">Silenciar</button>
+            </div>
+            <div class="name-container">
+                <input id="name" placeholder="Tu nombre">
+                <button id="join" class="change-name-button">Cambiar nombre</button>
+            </div>
+            <div id="chat-container"></div>
+            <input id="chat-input" placeholder="Escribe un mensaje...">
+            <button id="chat-send-button">Enviar</button>
+            <ul id="users-list"></ul>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
