@@ -62,18 +62,10 @@ Esta es una aplicación web de videollamada basada en WebRTC que permite a los u
 
 ## Uso
 
-1. **Unirse a una sala:**
-   - Introduce el nombre de la sala y tu nombre en los campos correspondientes.
-   - Haz clic en "Unirse a Sala" para ingresar a una sala existente.
-
-2. **Crear una sala:**
-   - Introduce el nombre de la sala y tu nombre en los campos correspondientes.
-   - Haz clic en "Crear Sala" para crear una nueva sala y unirte a ella.
-
-3. **Enviar mensajes en el chat:**
+1. **Enviar mensajes en el chat:**
    - Escribe tu mensaje en el campo de entrada de chat y haz clic en "Enviar" o presiona Enter para enviar el mensaje.
 
-4. **Gestionar cámara y micrófono:**
+2. **Gestionar cámara y micrófono:**
    - Usa los botones para encender/apagar la cámara y activar/silenciar el micrófono.
 
 ## Estructura del Proyecto
@@ -82,15 +74,3 @@ Esta es una aplicación web de videollamada basada en WebRTC que permite a los u
 - `app.js`: Archivo principal del frontend que maneja la lógica de WebRTC y chat.
 - `server.js`: Archivo del backend que maneja la señalización y gestión de salas.
 - `package.json`: Archivo de configuración de npm que incluye las dependencias y scripts del proyecto.
-
-## Contribuciones
-
-Si deseas contribuir a este proyecto, por favor abre un problema (issue) o envía una solicitud de extracción (pull request). 
-
-## Licencia
-
-Este proyecto está licenciado bajo la [Licencia MIT](LICENSE).
-
-## Contacto
-
-Para más información, puedes contactar al autor en [tu-email@example.com](mailto:tu-email@example.com).
